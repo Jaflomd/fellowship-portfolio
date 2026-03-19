@@ -8,23 +8,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-/* ===== ZEN CYBERPUNK — DESIGN TOKENS ===== */
+/* ===== ZEN CYBERPUNK — BLACK & GOLD ===== */
 :root {
-    --bg-void: #04070d;
-    --bg-primary: #06090f;
-    --bg-card: rgba(255, 255, 255, 0.03);
-    --bg-card-hover: rgba(255, 255, 255, 0.06);
+    --bg-void: #090909;
+    --bg-primary: #0F0F0F;
+    --bg-warm: #1A1512;
+    --bg-card: rgba(26, 21, 18, 0.6);
+    --bg-card-hover: rgba(26, 21, 18, 0.85);
     --text-primary: #e8e6e3;
-    --text-secondary: #9ca3af;
-    --text-muted: #6b7280;
-    --cyan: #00ffcc;
-    --magenta: #ff00aa;
-    --cyan-dim: rgba(0, 255, 204, 0.08);
-    --cyan-glow: rgba(0, 255, 204, 0.15);
-    --magenta-dim: rgba(255, 0, 170, 0.06);
-    --magenta-glow: rgba(255, 0, 170, 0.12);
-    --border: rgba(255, 255, 255, 0.06);
-    --border-hover: rgba(0, 255, 204, 0.2);
+    --text-secondary: #a39e96;
+    --text-muted: #6b6560;
+    --gold: #FFBF00;
+    --gold-light: #F0C84C;
+    --gold-spec: #FFF3A3;
+    --gold-deep: #BF953F;
+    --gold-anchor: #AA771C;
+    --gold-dim: rgba(255, 191, 0, 0.08);
+    --gold-glow: rgba(255, 191, 0, 0.15);
+    --border: rgba(191, 149, 63, 0.1);
+    --border-hover: rgba(255, 191, 0, 0.35);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -35,9 +37,9 @@ body {
     color: var(--text-primary);
     background: var(--bg-void);
     background-image:
-        linear-gradient(rgba(0, 255, 204, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 204, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
+        linear-gradient(rgba(191, 149, 63, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(191, 149, 63, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
     line-height: 1.7;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -92,13 +94,13 @@ body::after {
 }
 
 @keyframes title-glow {
-    0%, 100% { text-shadow: 0 0 40px rgba(0, 255, 204, 0.2), 0 0 80px rgba(0, 255, 204, 0.05); }
-    50% { text-shadow: 0 0 60px rgba(0, 255, 204, 0.35), 0 0 120px rgba(0, 255, 204, 0.1); }
+    0%, 100% { text-shadow: 0 0 4px rgba(255, 243, 163, 0.9), 0 0 12px rgba(255, 191, 0, 0.4), 0 0 40px rgba(191, 149, 63, 0.2); }
+    50% { text-shadow: 0 0 6px rgba(255, 243, 163, 0.9), 0 0 20px rgba(255, 191, 0, 0.5), 0 0 60px rgba(191, 149, 63, 0.3); }
 }
 
 @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 204, 0.1), 0 0 60px rgba(0, 255, 204, 0.03); }
-    50% { box-shadow: 0 0 30px rgba(0, 255, 204, 0.18), 0 0 80px rgba(0, 255, 204, 0.06); }
+    0%, 100% { box-shadow: 0 0 20px rgba(255, 191, 0, 0.1), 0 0 60px rgba(255, 191, 0, 0.03); }
+    50% { box-shadow: 0 0 30px rgba(255, 191, 0, 0.18), 0 0 80px rgba(255, 191, 0, 0.06); }
 }
 
 @keyframes breathe {
@@ -147,7 +149,7 @@ body::after {
     width: 60%;
     height: 60%;
     border-radius: 50%;
-    background: radial-gradient(ellipse at 30% 40%, var(--cyan) 0%, transparent 60%);
+    background: radial-gradient(ellipse at 30% 40%, var(--gold) 0%, transparent 60%);
     opacity: 0.07;
     pointer-events: none;
     z-index: 0;
@@ -162,7 +164,7 @@ body::after {
     width: 50%;
     height: 50%;
     border-radius: 50%;
-    background: radial-gradient(ellipse at 70% 60%, var(--magenta) 0%, transparent 55%);
+    background: radial-gradient(ellipse at 70% 60%, var(--gold-spec) 0%, transparent 55%);
     opacity: 0.05;
     pointer-events: none;
     z-index: 0;
@@ -181,7 +183,7 @@ body::after {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent 0%, var(--cyan) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
     opacity: 0.15;
     z-index: 1;
     animation: scan-line 8s linear infinite;
@@ -194,9 +196,9 @@ body::after {
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 4px;
-    color: var(--cyan);
-    background: rgba(0, 255, 204, 0.06);
-    border: 1px solid rgba(0, 255, 204, 0.15);
+    color: var(--gold);
+    background: rgba(255, 191, 0, 0.06);
+    border: 1px solid rgba(255, 191, 0, 0.15);
     padding: 8px 20px;
     border-radius: 4px;
     margin-bottom: 32px;
@@ -231,11 +233,11 @@ body::after {
     display: inline-block;
     width: 3px;
     height: 3px;
-    background: var(--cyan);
+    background: var(--gold-light);
     border-radius: 50%;
     vertical-align: middle;
     margin: 0 12px;
-    box-shadow: 0 0 6px var(--cyan);
+    box-shadow: 0 0 4px var(--gold), 0 0 10px rgba(255, 191, 0, 0.3);
 }
 
 .hero-bio {
@@ -249,14 +251,14 @@ body::after {
 }
 
 .hero-bio strong {
-    color: var(--cyan);
+    color: var(--gold);
     font-weight: 500;
 }
 
 .hero-bio em {
     color: var(--text-primary);
     font-style: normal;
-    border-bottom: 1px solid rgba(0, 255, 204, 0.3);
+    border-bottom: 1px solid rgba(255, 191, 0, 0.3);
 }
 
 .hero-links {
@@ -289,13 +291,13 @@ body::after {
 }
 
 .hero-links a:hover {
-    border-color: var(--cyan);
-    color: var(--cyan);
-    box-shadow: 0 0 20px rgba(0, 255, 204, 0.1), inset 0 0 20px rgba(0, 255, 204, 0.03);
+    border-color: var(--gold);
+    color: var(--gold);
+    box-shadow: 0 0 20px rgba(255, 191, 0, 0.1), inset 0 0 20px rgba(255, 191, 0, 0.03);
 }
 
 .hero-links a:hover svg {
-    stroke: var(--cyan);
+    stroke: var(--gold);
 }
 
 /* ===== SECTIONS ===== */
@@ -308,10 +310,10 @@ section {
 .glow-dot {
     width: 6px;
     height: 6px;
-    background: var(--cyan);
+    background: var(--gold);
     border-radius: 50%;
     margin-bottom: 28px;
-    box-shadow: 0 0 12px var(--cyan), 0 0 24px rgba(0, 255, 204, 0.3);
+    box-shadow: 0 0 12px var(--gold), 0 0 24px rgba(255, 191, 0, 0.3);
     animation: breathe 3s ease-in-out infinite;
 }
 
@@ -320,7 +322,7 @@ section {
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 4px;
-    color: var(--cyan);
+    color: var(--gold);
     font-weight: 500;
     margin-bottom: 10px;
 }
@@ -363,7 +365,7 @@ section p {
 
 .metric:hover {
     border-color: var(--border-hover);
-    box-shadow: 0 0 30px rgba(0, 255, 204, 0.08);
+    box-shadow: 0 0 30px rgba(255, 191, 0, 0.08);
     animation: pulse-glow 2s ease-in-out infinite;
 }
 
@@ -371,7 +373,7 @@ section p {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 2.2rem;
     font-weight: 600;
-    background: linear-gradient(135deg, var(--cyan), var(--magenta));
+    background: linear-gradient(135deg, var(--gold-anchor), var(--gold-spec) 50%, var(--gold-anchor));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -415,7 +417,7 @@ section p {
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--cyan), var(--magenta));
+    background: linear-gradient(90deg, var(--gold), var(--gold-spec));
     opacity: 0;
     transition: opacity 0.4s ease;
 }
@@ -428,8 +430,8 @@ section p {
     right: -1px;
     width: 10px;
     height: 10px;
-    border-right: 2px solid var(--cyan);
-    border-bottom: 2px solid var(--cyan);
+    border-right: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
     opacity: 0;
     transition: all 0.4s ease;
 }
@@ -441,7 +443,7 @@ section p {
     background: linear-gradient(
         125deg,
         rgba(255, 0, 128, 0) 0%,
-        rgba(0, 255, 204, 0.08) 30%,
+        rgba(255, 191, 0, 0.08) 30%,
         rgba(128, 0, 255, 0.06) 50%,
         rgba(255, 165, 0, 0.04) 70%,
         rgba(255, 0, 128, 0) 100%
@@ -455,9 +457,9 @@ section p {
     background: var(--bg-card-hover);
     border-color: var(--border-hover);
     box-shadow:
-        0 0 15px rgba(0, 255, 204, 0.1),
-        0 0 40px rgba(0, 255, 204, 0.04),
-        inset 0 0 20px rgba(0, 255, 204, 0.02);
+        0 0 15px rgba(255, 191, 0, 0.1),
+        0 0 40px rgba(255, 191, 0, 0.04),
+        inset 0 0 20px rgba(255, 191, 0, 0.02);
     transform: translateY(-2px);
 }
 
@@ -490,7 +492,7 @@ section p {
 .card .meta {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.62rem;
-    color: var(--cyan);
+    color: var(--gold);
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -509,9 +511,9 @@ section p {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.62rem;
     padding: 4px 12px;
-    background: var(--cyan-dim);
-    color: var(--cyan);
-    border: 1px solid rgba(0, 255, 204, 0.12);
+    background: var(--gold-dim);
+    color: var(--gold);
+    border: 1px solid rgba(255, 191, 0, 0.12);
     border-radius: 4px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -521,18 +523,18 @@ section p {
 /* ===== PUB CARDS ===== */
 .pub-card {
     border-left: 2px solid transparent;
-    border-image: linear-gradient(180deg, var(--cyan), var(--magenta)) 1;
+    border-image: linear-gradient(180deg, var(--gold), var(--gold-spec)) 1;
 }
 
 .pub-citations {
-    color: var(--magenta) !important;
+    color: var(--gold-light) !important;
     font-weight: 600 !important;
-    text-shadow: 0 0 20px rgba(255, 0, 170, 0.3);
+    text-shadow: 0 0 8px rgba(255, 191, 0, 0.4);
 }
 
 /* ===== ARROW LINKS ===== */
 a.arrow-link {
-    color: var(--cyan);
+    color: var(--gold);
     text-decoration: none;
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 500;
@@ -546,13 +548,13 @@ a.arrow-link {
 
 a.arrow-link:hover {
     gap: 12px;
-    text-shadow: 0 0 12px rgba(0, 255, 204, 0.4);
+    text-shadow: 0 0 12px rgba(255, 191, 0, 0.4);
 }
 
 /* ===== FEATURED CARDS ===== */
 .featured-card {
-    background: linear-gradient(135deg, rgba(0, 255, 204, 0.03) 0%, rgba(255, 0, 170, 0.02) 100%);
-    border: 1px solid rgba(0, 255, 204, 0.1);
+    background: linear-gradient(135deg, rgba(255, 191, 0, 0.03) 0%, rgba(191, 149, 63, 0.02) 100%);
+    border: 1px solid rgba(255, 191, 0, 0.1);
     border-radius: 12px;
     padding: 36px;
     margin-top: 28px;
@@ -569,7 +571,7 @@ a.arrow-link:hover {
     right: -15%;
     width: 250px;
     height: 250px;
-    background: radial-gradient(circle, var(--cyan-glow) 0%, transparent 70%);
+    background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
     border-radius: 50%;
     animation: float-orb 12s ease-in-out infinite;
 }
@@ -597,7 +599,7 @@ a.arrow-link:hover {
 .featured-card .meta {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.62rem;
-    color: var(--cyan);
+    color: var(--gold);
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -619,13 +621,13 @@ footer p {
 }
 
 footer a {
-    color: var(--cyan);
+    color: var(--gold);
     text-decoration: none;
     transition: text-shadow 0.3s ease;
 }
 
 footer a:hover {
-    text-shadow: 0 0 12px rgba(0, 255, 204, 0.4);
+    text-shadow: 0 0 12px rgba(255, 191, 0, 0.4);
 }
 
 .footer-badge {
@@ -927,13 +929,13 @@ footer a:hover {
         </div>
         <div class="card-grid reveal" style="margin-top: 16px;">
             <div class="card">
-                <div class="meta" style="color: var(--magenta);">El Comercio &middot; National Press</div>
+                <div class="meta" style="color: var(--gold-light);">El Comercio &middot; National Press</div>
                 <h3>"ChatGPT obtuvo mejor calificaci&oacute;n que los estudiantes peruanos en el examen nacional de medicina"</h3>
                 <p>Coverage of Flores-Cohaila's research on AI performance vs. medical students on Peru's national licensing exam.</p>
                 <p style="margin-top: 12px;"><a href="https://elcomercio.pe/tecnologia/chatgpt-obtuvo-mejor-calificacion-que-los-estudiantes-peruanos-en-el-examen-nacional-de-medicina-noticia/" target="_blank" class="arrow-link">Read article &rarr;</a></p>
             </div>
             <div class="card">
-                <div class="meta" style="color: var(--magenta);">Universidad Cient&iacute;fica del Sur</div>
+                <div class="meta" style="color: var(--gold-light);">Universidad Cient&iacute;fica del Sur</div>
                 <h3>"C&oacute;mo la inteligencia artificial puede ser usada para la educaci&oacute;n de los futuros m&eacute;dicos peruanos"</h3>
                 <p>Feature on AI-driven innovation in medical education by Flores-Cohaila's research group.</p>
                 <p style="margin-top: 12px;"><a href="https://divulga.cientifica.edu.pe/nuestra-ciencia/como-la-inteligencia-artificial-puede-ser-usada-para-la-educacion-de-los-futuros-medicos-peruanos/" target="_blank" class="arrow-link">Read article &rarr;</a></p>
@@ -1199,7 +1201,7 @@ footer a:hover {
 
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(0, 255, 204, ${p.o})`;
+            ctx.fillStyle = `rgba(255, 191, 0, ${p.o})`;
             ctx.fill();
 
             for (let j = i + 1; j < particles.length; j++) {
@@ -1211,7 +1213,7 @@ footer a:hover {
                     ctx.beginPath();
                     ctx.moveTo(p.x, p.y);
                     ctx.lineTo(q.x, q.y);
-                    ctx.strokeStyle = `rgba(0, 255, 204, ${0.06 * (1 - dist / MAX_DIST)})`;
+                    ctx.strokeStyle = `rgba(255, 191, 0, ${0.06 * (1 - dist / MAX_DIST)})`;
                     ctx.lineWidth = 0.5;
                     ctx.stroke();
                 }
